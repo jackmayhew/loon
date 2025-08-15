@@ -1,0 +1,239 @@
+{
+  "productPage": {
+    "title": "Find Canadian alternatives for:",
+    "resultsMessage": "Canadian products found:",
+    "loadingMessage": "Waiting for page...",
+    "scrapingMessages": [
+      "Processing product data...",
+      "Still working...",
+      "Almost there..."
+    ]
+  },
+  "cartPage": {
+    "title": "Cart",
+    "resultsMessage": "Results for: {value}",
+    "loadingMessage": "Waiting for cart...",
+    "scrapeErrorTitle": "Oops! Something went wrong.",
+    "scrapeErrorMessage": "We had trouble accessing your cart. Please try again.",
+    "emptyCartMessage": "Looks like your cart is empty. If you're seeing this by mistake, try refreshing the page.",
+    "collapsedCartMessage": "Some cart items appear to be hidden. Please expand your cart and reopen this popup.",
+    "scrapingMessages": [
+      "Processing cart data...",
+      "Still working...",
+      "Almost there..."
+    ]
+  },
+  "bookmarkPage": {
+    "title": "{n} bookmark found | {n} bookmarks found",
+    "basicTitle": "Bookmarks",
+    "loadingMessage": "Finding your bookmarks...",
+    "noBookmarksTitle": "Your bookmark collection is empty!",
+    "noBookmarksMessage": "Bookmarked items will appear here making it easy to revisit products you're interested in.",
+    "error": "Oops! Something went wrong. Please try again.",
+    "errorTitle": "Oops! Something went wrong.",
+    "errorMessage": "It looks like there was an error connecting to the server. Please try again."
+  },
+  "searchPage": {
+    "title": "{display} result for: \"{value}\" | {display} results for: \"{value}\"",
+    "loadingMessage": "Searching products...",
+    "noResults": "Sorry, no products found. Try different keywords or check back soon as our database grows!",
+    "error": "Oops! Something went wrong. Please try again.",
+    "errorTitle": "Oops! Something went wrong.",
+    "errorMessage": "It looks like there was an error connecting to the server. Please try again."
+  },
+  "unsupportedPage": {
+    "title": "Loon is ready to help you shop Canadian!",
+    "message": "Find Canadian alternatives by heading to a product or checkout page on this website.",
+    "canadianRetailerTrue": "Good news though, {value} is a Canadian retailer!",
+    "canadianRetailerFalse": "{value} isn't a Canadian retailer.",
+    "retailerAlternatives": "Consider these Canadian alternatives instead:"
+  },
+  "unsupportedDomain": {
+    "title": " Loon works on the Canadian version of this site.",
+    "message": "Try switching to the .ca domain.",
+    "retailerList": "View supported retailers"
+  },
+  "unknownRetailer": {
+    "message": "Loon doesn't support this website yet.",
+    "supportedRetailers": "We currently support:",
+    "checkBackSoon": "Want to suggest a retailer?",
+    "letUsKnow": "Let us know!"
+  },
+  "retailerError": {
+    "message": "Oops! Something went wrong while connecting to the server. Please try again."
+  },
+  "errorPage": {
+    "title": "Oops! Something went wrong.",
+    "message": "It looks like there was an error connecting to the server. Please try again."
+  },
+  "rateLimitPage": {
+    "title": "Too many requests made to the server.",
+    "waitSeconds": "Please wait {n} second | Please wait {n} seconds",
+    "waitMinutes": "Please wait {n} minute | Please wait {n} minutes",
+    "minute": "{n} minute | {n} minutes",
+    "second": "{n} second | {n} seconds",
+    "waitBoth": "Please wait {minutes} and {seconds}"
+  },
+  "serviceUnavailablePage": {
+    "title": "Service is temporarily unavailable.",
+    "waitSeconds": "Please try again in {n} second | Please try again in {n} seconds",
+    "waitMinutes": "Please try again in {n} minute | Please try again in {n} minutes",
+    "minute": "{n} minute | {n} minutes",
+    "second": "{n} second | {n} seconds",
+    "waitBoth": "Please try again in {minutes} and {seconds}"
+  },
+  "productCard": {
+    "priceFormat": "${value}",
+    "matchingTerm": "Matching Term",
+    "promoOffers": {
+      "promoMessage": "Loon Deals: {offerDetails}! Use at checkout.",
+      "bogo": "BOGO",
+      "percentageOff": "{value}% off",
+      "fixedAmountOff": "${value} off",
+      "defaultOffer": "Loon Deals: Special Offer!"
+    },
+    "tooltips": {
+      "errorMatchQuality": "Errors occurred: Match quality affected.",
+      "viewRetailers": "View other retailers",
+      "retailer": "Retailer",
+      "matchVote": "Good Match?",
+      "cartTip": "Tip: Loon finds better results on product pages.",
+      "matchScore": "Match score",
+      "matchScoreDisplay": "Match Score: {value}%"
+    },
+    "listingsPopover": {
+      "title": "Also available at:",
+      "noListings": "No other listings found."
+    }
+  },
+  "header": {
+    "searchDB": "Search our database...",
+    "listingsPopoverTitle": "Also available at:",
+    "promoPopoverTitle": "Promo available:",
+    "promoOffers": {
+      "title": "Loon Deals:",
+      "promoMessage": "{offerDetails} at checkout!",
+      "bogo": "BOGO",
+      "percentageOff": "{value}% off",
+      "fixedAmountOff": "${value} off",
+      "defaultOffer": "Loon Deals: Special Offer!"
+    },
+    "noResults": "Sorry, no products found. Try different keywords or check back soon as our database grows!",
+    "errorMessage": "Something went wrong. Please try again."
+  },
+  "common": {
+    "loonTitle": "Loon",
+    "processingPage": "Processing the page...",
+    "loading": "Loading products...",
+    "noResults": "Sorry, no products found. We're working hard to grow our database. Check back soon!"
+  },
+  "buttons": {
+    "findAlternatives": "Find Products",
+    "loadingAlternatives": "Loading Products",
+    "hideAlternatives": "Hide Products",
+    "showAlternatives": "Show Products",
+    "viewProduct": "View Product",
+    "retry": "Retry",
+    "bookmarks": "Bookmarks",
+    "language": "Français",
+    "goBack": "Back",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "loadMore": "Load More",
+    "shop": "Shop",
+    "scrollToTop": "Scroll to top",
+    "suggestionsToggle": "Suggestions",
+    "clearSearchFiltersTitle": "Clear All",
+    "provinces": "Provinces",
+    "applySearchFilters": "Apply Filters",
+    "newestFirst": " Newest First",
+    "oldestFirst": "Oldest First"
+  },
+  "statusMessages": {
+    "STATUS_STARTED": "Starting process...",
+    "STATUS_PROCESSING": "Processing product...",
+    "STATUS_PROCESSED": "Product processed",
+    "STATUS_ANALYZING_DATA": "Analyzing product data...",
+    "STATUS_ANALYZED_DATA": "Analysis complete",
+    "STATUS_FETCH_READY": "Ready to find alternatives",
+    "STATUS_FETCH_STARTING": "Finding Canadian alternatives...",
+    "STATUS_FETCH_COMPLETE": "Alternatives found!",
+    "STATUS_SUCCESSFUL": "Success!",
+    "STATUS_ERROR": "Something went wrong"
+  },
+  "errorMessages": {
+    "serverError": "Oops! Something went wrong. Please try again.",
+    "scrapeError": "Error loading product data. Please try again.",
+    "scrapeErrorCard": "Product details unavailable...",
+    "missingTitle": "Missing product title...",
+    "scrapeErrors": {
+      "CONFIG_ERROR": "Error loading product data. Please try again.",
+      "SCRAPE_ERROR": "Error loading product data. Please try again.",
+      "RAINFOREST_ERROR": "Error loading product data. Please try again."
+    },
+    "noImage": "No Image"
+  },
+  "errors": {
+    "message": ""
+  },
+  "accessibility": {
+    "closeButton": "Close",
+    "copyPromoCode": "Copy promo code",
+    "copiedPromoCode": "Promo code copied!",
+    "copyPromoCodeError": "Promo code copy failed",
+    "bookmarkButtonSave": "Bookmark this item",
+    "bookmarkButtonRemove": "Remove this bookmark",
+    "openUserMenu": "Open user menu",
+    "closeUserMenu": "Close user menu",
+    "openSettingsMenu": "Open search settings menu",
+    "closeSettingsMenu": "Close search settings menu",
+    "openSearchFiltersMenu": "Open search filters menu",
+    "closeSearchFiltersMenu": "Close search filters menu",
+    "languageToggle": "Passer au français",
+    "viewBookmarks": "View bookmarked products",
+    "refreshExtension": "Refresh extension",
+    "countryCode": "Country code: {value}",
+    "viewPromos": "View promos",
+    "imagePlaceholder": "Image placeholder",
+    "enableTypeahead": "Enable search suggestions",
+    "disableTypeahead": "Disable search suggestions",
+    "dollarIcon": "Dollar sign",
+    "searchFiltersTitle": "Filters",
+    "clearSearchFilters": "Clear search filters",
+    "promotionsTitle": "Promotions",
+    "enablePromotionSearchFilter": "Enable promotion search filter",
+    "disablePromotionSearchFilter": "Disable promotion search filter",
+    "priceSlider": {
+      "minThumbLabel": "Minimum price control, current value ${value}",
+      "maxThumbLabel": "Maximum price control, current value ${value}"
+    },
+    "openProvincesSelect": "Open provinces select menu",
+    "closeProvincesSelect": "Close provinces select menu",
+    "voteUp": "Good match",
+    "voteDown": "Good match"
+  },
+  "provinces": {
+    "AB": "Alberta",
+    "BC": "British Columbia",
+    "MB": "Manitoba",
+    "NB": "New Brunswick",
+    "NL": "Newfoundland and Labrador",
+    "NS": "Nova Scotia",
+    "NT": "Northwest Territories",
+    "NU": "Nunavut",
+    "ON": "Ontario",
+    "PE": "Prince Edward Island",
+    "QC": "Quebec",
+    "SK": "Saskatchewan",
+    "YT": "Yukon"
+  },
+  "supportedDomains": {
+    "Amazon": "Amazon",
+    "Best Buy Canada": "Best Buy Canada",
+    "Canadian Tire": "Canadian Tire",
+    "Costco": "Costco",
+    "Shoppers Drug Mart": "Shoppers Drug Mart",
+    "Staples": "Staples",
+    "Walmart": "Walmart"
+  }
+}

@@ -1,0 +1,113 @@
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    name: Build Extension Packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Bump manifest version
+        run: pnpm run version
+
+      - name: Build and pack for Chromium
+        run: npm run pack
+      - name: Rename Chromium package to protect it
+        run: mv extension.zip chromium-package.zip
+
+      - name: Build and pack for Firefox
+        run: pnpm run pack:firefox
+
+      - name: Upload Chromium package
+        uses: actions/upload-artifact@v4
+        with:
+          name: chromium-package
+          path: chromium-package.zip
+      - name: Upload Firefox package
+        uses: actions/upload-artifact@v4
+        with:
+          name: firefox-package
+          path: extension.xpi
+      - name: Upload Firefox source
+        uses: actions/upload-artifact@v4
+        with:
+          name: firefox-source
+          path: extension/
+
+  publish-chrome:
+    name: Publish to Chrome Web Store
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download Chromium package
+        uses: actions/download-artifact@v4
+        with:
+          name: chromium-package
+
+      - name: Upload to Chrome Web Store
+        uses: mnao305/chrome-extension-upload@v5.0.0
+        with:
+          file-path: chromium-package.zip
+          extension-id: ${{ secrets.CHROME_EXTENSION_ID }}
+          client-id: ${{ secrets.CHROME_CLIENT_ID }}
+          client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+          refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+          publish: false
+
+  publish-firefox:
+    name: Publish to Firefox Add-on Store
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: pnpm
+      - name: Install dependencies # To get the web-ext binary
+        run: pnpm install
+      - name: Download Firefox source
+        uses: actions/download-artifact@v4
+        with:
+          name: firefox-source
+          path: extension # Unpack the artifact into the 'extension' directory
+
+      - name: Sign and submit to Mozilla
+        run: pnpm web-ext sign --source-dir ./extension --channel=listed
+        env:
+          WEB_EXT_API_KEY: ${{ secrets.FIREFOX_API_KEY }}
+          WEB_EXT_API_SECRET: ${{ secrets.FIREFOX_API_SECRET }}
+
+  # publish-opera:
+  #   name: Publish to Opera Addons
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - name: Download Chromium package
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: chromium-package
+  #     - name: Upload to Opera Addons
+  #       uses: tristanbes/opera-extension-upload-action@v2
+  #       with:
+  #         zip-path: chromium-package.zip
+  #         extension-id: ${{ secrets.OPERA_EXTENSION_ID }}
+  #         api-key: ${{ secrets.OPERA_API_KEY }}
+  #         api-secret: ${{ secrets.OPERA_API_SECRET }}

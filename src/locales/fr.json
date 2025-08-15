@@ -1,0 +1,238 @@
+{
+  "productPage": {
+    "title": "Alternatives canadiennes pour :",
+    "resultsMessage": "Produits canadiens trouvés :",
+    "loadingMessage": "En attente de la page...",
+    "scrapingMessages": [
+      "Chargement du produit...",
+      "Encore un instant...",
+      "Presque terminé..."
+    ]
+  },
+  "cartPage": {
+    "title": "Panier",
+    "resultsMessage": "Résultats pour : {value}",
+    "loadingMessage": "En attente du panier...",
+    "scrapeErrorTitle": "Oups ! Une erreur s'est produite.",
+    "scrapeErrorMessage": "Nous avons eu de la difficulté à accéder à votre panier. Veuillez réessayer.",
+    "emptyCartMessage": "Il semble que votre panier soit vide ! Si c'est une erreur, essayez de rafraîchir la page.",
+    "collapsedCartMessage": "Il semble que certains articles du panier soient masqués. Veuillez développer votre panier et rouvrir cette fenêtre.",
+    "scrapingMessages": [
+      "Chargement du panier...",
+      "Encore un instant...",
+      "Presque terminé..."
+    ]
+  },
+  "bookmarkPage": {
+    "title": "{n} favori trouvé | {n} favoris trouvés",
+    "basicTitle": "Favoris",
+    "loadingMessage": "Recherche de vos favoris...",
+    "noBookmarksTitle": "Votre collection de favoris est vide !",
+    "noBookmarksMessage": "Les articles sauvegardés apparaîtront ici, facilitant la consultation des produits qui vous intéressent.",
+    "error": "Oups ! Une erreur s'est produite. Veuillez réessayer.",
+    "errorTitle": "Oups ! Une erreur s'est produite.",
+    "errorMessage": "Il semble y avoir eu une erreur de connexion au serveur. Veuillez réessayer."
+  },
+  "searchPage": {
+    "title": "{display} résultat pour : « {value} » | {display} résultats pour : « {value} »",
+    "loadingMessage": "Recherche en cours...",
+    "noResults": "Désolé, aucun produit trouvé. Nous travaillons fort pour enrichir notre base de données : revenez bientôt !",
+    "error": "Oups ! Une erreur s'est produite. Veuillez réessayer.",
+    "errorTitle": "Oups ! Une erreur s'est produite.",
+    "errorMessage": "Il semble y avoir eu une erreur de connexion au serveur. Veuillez réessayer."
+  },
+  "unsupportedPage": {
+    "title": "Loon est prêt à vous aider à magasiner canadien !",
+    "message": "Trouvez des alternatives canadiennes en visitant une page de produit ou de paiement sur ce site.",
+    "canadianRetailerFalse": "{value} n'est pas un détaillant canadien.",
+    "retailerAlternatives": "Voici quelques alternatives canadiennes à considérer :"
+  },
+  "unsupportedDomain": {
+    "title": "Loon fonctionne sur la version canadienne de ce site.",
+    "message": "Essayez de passer au domaine .ca.",
+    "retailerList": "Détaillants supportés"
+  },
+  "unknownRetailer": {
+    "message": "Loon ne prend pas encore en charge ce site Web.",
+    "supportedRetailers": "Nous prenons actuellement en charge :",
+    "checkBackSoon": "Suggérer un détaillant ?",
+    "letUsKnow": "Faites-nous savoir !"
+  },
+  "retailerError": {
+    "message": "Oups ! Une erreur s'est produite lors de la connexion au serveur. Veuillez réessayer."
+  },
+  "errorPage": {
+    "title": "Oups ! Une erreur s'est produite.",
+    "message": "Il semble y avoir eu une erreur de connexion au serveur. Veuillez réessayer."
+  },
+  "rateLimitPage": {
+    "title": "Trop de requêtes ont été envoyées au serveur.",
+    "waitSeconds": "Veuillez attendre {n} seconde | Veuillez attendre {n} secondes",
+    "waitMinutes": "Veuillez attendre {n} minute | Veuillez attendre {n} minutes",
+    "minute": "{n} minute | {n} minutes",
+    "second": "{n} seconde | {n} secondes",
+    "waitBoth": "Veuillez attendre {minutes} et {seconds}"
+  },
+  "serviceUnavailablePage": {
+    "title": "Le service est temporairement indisponible.",
+    "waitSeconds": "Veuillez réessayer dans {n} seconde | Veuillez réessayer dans {n} secondes",
+    "waitMinutes": "Veuillez réessayer dans {n} minute | Veuillez réessayer dans {n} minutes",
+    "minute": "{n} minute | {n} minutes",
+    "second": "{n} seconde | {n} secondes",
+    "waitBoth": "Veuillez réessayer dans {minutes} et {seconds}"
+  },
+  "productCard": {
+    "priceFormat": "{value}\u00A0$",
+    "matchingTerm": "Terme de correspondance",
+    "promoOffers": {
+      "promoMessage": "Aubaines Loon : {offerDetails} ! En caisse.",
+      "bogo": "2 pour 1",
+      "percentageOff": "{value} % de rabais",
+      "fixedAmountOff": "{value} $ de rabais",
+      "defaultOffer": "Aubaines Loon : Offre spéciale !"
+    },
+    "tooltips": {
+      "errorMatchQuality": "Erreurs : Qualité du jumelage affectée.",
+      "viewRetailers": "Voir d'autres détaillants",
+      "retailer": "Détaillant",
+      "matchVote": "Bon résultat ?",
+      "cartTip": "Info : meilleurs matchs sur pages produit.",
+      "matchScore": "Pertinence",
+      "matchScoreDisplay": "Pertinence : {value} %"
+    },
+    "listingsPopover": {
+      "title": "Aussi disponible chez :",
+      "noListings": "Aucune autre offre trouvée."
+    }
+  },
+  "header": {
+    "searchDB": "Rechercher la BD...",
+    "listingsPopoverTitle": "Également chez :",
+    "promoPopoverTitle": "Promo disponible :",
+    "promoOffers": {
+      "title": "Aubaines Loon :",
+      "promoMessage": "{offerDetails}",
+      "bogo": "2 pour 1 à la caisse.",
+      "percentageOff": "{value} % de rabais !",
+      "fixedAmountOff": "{value} $ de rabais !",
+      "defaultOffer": "Promo disponible !"
+    },
+    "noResults": "Aucun produit trouvé. Essayez d'autres termes ou revenez plus tard, notre catalogue s'enrichit!",
+    "errorMessage": "Une erreur s'est produite. Veuillez réessayer."
+  },
+  "common": {
+    "loonTitle": "Loon",
+    "processingPage": "Chargement de la page...",
+    "loading": "Chargement des produits...",
+    "noResults": "Désolé, aucun produit trouvé. Nous travaillons fort pour enrichir notre base de données : revenez bientôt !"
+  },
+  "buttons": {
+    "findAlternatives": "Alternatives",
+    "loadingAlternatives": "Chargement...",
+    "hideAlternatives": "Masquer produits",
+    "showAlternatives": "Afficher produits",
+    "viewProduct": "Voir le produit",
+    "retry": "Réessayer",
+    "bookmarks": "Favoris",
+    "language": "English",
+    "goBack": "Retour",
+    "newest": "Récent",
+    "oldest": "Ancien",
+    "loadMore": "Charger plus",
+    "shop": "Magasiner",
+    "scrollToTop": "Revenir en haut",
+    "suggestionsToggle": "Suggestions",
+    "clearSearchFiltersTitle": "Tout effacer",
+    "provinces": "Provinces",
+    "applySearchFilters": "Appliquer",
+    "newestFirst": "Récent d’abord",
+    "oldestFirst": "Ancien d’abord"
+  },
+  "statusMessages": {
+    "STATUS_STARTED": "Démarrage du processus...",
+    "STATUS_PROCESSING": "Chargement du produit...",
+    "STATUS_PROCESSED": "Produit traité",
+    "STATUS_ANALYZING_DATA": "Analyse des données du produit...",
+    "STATUS_ANALYZED_DATA": "Analyse terminée",
+    "STATUS_FETCH_READY": "Prêt à trouver des alternatives",
+    "STATUS_FETCH_STARTING": "Recherche d'alternatives canadiennes...",
+    "STATUS_FETCH_COMPLETE": "Alternatives trouvées !",
+    "STATUS_SUCCESSFUL": "Succès !",
+    "STATUS_ERROR": "Une erreur est survenue"
+  },
+  "errorMessages": {
+    "serverError": "Oups ! Quelque chose a mal tourné. Veuillez réessayer.",
+    "scrapeError": "Erreur lors du chargement des données produit. Veuillez réessayer.",
+    "scrapeErrorCard": "Détails non disponibles...",
+    "missingTitle": "Titre du produit manquant...",
+    "scrapeErrors": {
+      "CONFIG_ERROR": "Erreur lors du chargement des données produit. Veuillez réessayer.",
+      "SCRAPE_ERROR": "Erreur lors du chargement des données produit. Veuillez réessayer.",
+      "RAINFOREST_ERROR": "Erreur lors du chargement des données produit. Veuillez réessayer."
+    },
+    "noImage": "Aucune image"
+  },
+  "errors": {
+    "fetchFailed": "Impossible de récupérer les alternatives.",
+    "apiError": "Une erreur est survenue. Veuillez réessayer."
+  },
+  "accessibility": {
+    "closeButton": "Fermer",
+    "copyPromoCode": "Copier le code promo",
+    "copiedPromoCode": "Code promo copié !",
+    "copyPromoCodeError": "Échec de la copie du code promo",
+    "bookmarkButtonSave": "Marquer cet article",
+    "bookmarkButtonRemove": "Retirer ce favori",
+    "openUserMenu": "Ouvrir le menu utilisateur",
+    "closeUserMenu": "Fermer le menu utilisateur",
+    "openSettingsMenu": "Ouvrir le menu des paramètres de recherche",
+    "closeSettingsMenu": "Fermer le menu des paramètres de recherche",
+    "openSearchFiltersMenu": "Ouvrir le menu des filtres de recherche",
+    "closeSearchFiltersMenu": "Fermer le menu des filtres de recherche",
+    "languageToggle": "Switch to english",
+    "viewBookmarks": "Voir les produits favoris",
+    "refreshExtension": "Actualiser l'extension",
+    "countryCode": "Code de pays : {value}",
+    "viewPromos": "Voir les promos",
+    "imagePlaceholder": "Espace réservé pour l'image",
+    "dollarICon": "Symbole du dollar",
+    "searchFiltersTitle": "Filtres",
+    "clearSearchFilters": "Effacer les filtres de recherche",
+    "promotionsTitle": "Promotions",
+    "enablePromotionSearchFilter": "Activer le filtre de recherche des promotions",
+    "disablePromotionSearchFilter": "Désactiver le filtre de recherche des promotions",
+    "priceSlider": {
+      "minThumbLabel": "Contrôle du prix minimum, valeur actuelle ${value}",
+      "maxThumbLabel": "Contrôle du prix maximum, valeur actuelle ${value}"
+    },
+    "openProvincesSelect": "Ouvrir le menu de sélection des provinces",
+    "closeProvincesSelect": "Fermer le menu de sélection des provinces",
+    "voteUp": "Bonne correspondance",
+    "voteDown": "Mauvaise correspondance"
+
+  },
+  "provinces": {
+    "AB": "Alberta",
+    "BC": "Colombie-Britannique",
+    "MB": "Manitoba",
+    "NB": "Nouveau-Brunswick",
+    "NL": "Terre-Neuve-et-Labrador",
+    "NS": "Nouvelle-Écosse",
+    "NT": "Territoires du Nord-Ouest",
+    "NU": "Nunavut",
+    "ON": "Ontario",
+    "PE": "Île-du-Prince-Édouard",
+    "QC": "Québec",
+    "SK": "Saskatchewan",
+    "YT": "Yukon"
+  },
+  "supportedDomains": {
+    "Amazon": "Amazon",
+    "Best Buy Canada": "Best Buy Canada",
+    "Canadian Tire": "Canadian Tire",
+    "Costco": "Costco",
+    "Shoppers Drug Mart": "Pharmaprix",
+    "Staples": "Bureau en Gros",
+    "Walmart": "Walmart"
+  }
+}
