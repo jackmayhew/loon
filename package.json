@@ -1,7 +1,7 @@
 {
-  "name": "vitesse-webext",
+  "name": "loon",
   "displayName": "Loon - Shop Canadian",
-  "version": "0.1.61",
+  "version": "0.1.62",
   "private": true,
   "packageManager": "pnpm@9.7.1",
   "description": "Find Canadian alternatives and deals as you shop online.",
