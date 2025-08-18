@@ -22,7 +22,7 @@ export default {
         return uniqueCategories.join(' > ') || undefined
       },
       manufacturer: (doc: Document) => doc.querySelector('[class*="marketplaceInfo"] a span')?.textContent?.trim(),
-      description: (doc: Document) => doc.querySelector('[class*="productOverviewGridArea"] [class*="description"]')?.textContent?.trim().slice(0, 150),
+      description: (doc: Document) => doc.querySelector('[class*="productOverviewGridArea"] [class*="description"]')?.textContent?.trim()?.slice(0, 300),
       sku: (doc: Document) => {
         const skuElement = doc.querySelector('[data-automation="SKU_ID"]')
         const sku = skuElement?.childNodes?.[1]?.textContent?.trim()
@@ -42,7 +42,7 @@ export default {
       price: { path: 'offers.price' },
       image: { path: 'image[0]' },
       manufacturer: { path: 'brand.name' },
-      description: { path: 'description', slice: 150 },
+      description: { path: 'description', slice: 300 },
       sku: { path: 'sku' },
       uniqueId: { path: 'sku' },
       gtin: { path: 'gtin12[0]' },

@@ -22,7 +22,7 @@ export default {
         return uniqueCategories.join(' > ') || undefined
       },
       manufacturer: (doc: Document) => doc.querySelector('.nl-product__brand')?.textContent?.trim(),
-      description: (doc: Document) => doc.querySelector('.nl-features__information')?.textContent?.trim().slice(0, 150),
+      description: (doc: Document) => doc.querySelector('.nl-features__information')?.textContent?.trim()?.slice(0, 300),
       sku: (doc: Document) => doc.querySelector('.nl-product__sku')?.textContent?.trim(),
       uniqueId: (doc: Document) => doc.querySelector('.nl-product__sku')?.textContent?.trim(),
     },
@@ -34,7 +34,7 @@ export default {
       price: { path: 'offers.price' },
       image: { path: 'image' },
       manufacturer: { path: 'brand.name' },
-      description: { path: 'description', slice: 150 },
+      description: { path: 'description', slice: 300 },
       sku: { path: 'sku' },
       uniqueId: { path: 'sku' },
     },

@@ -16,7 +16,7 @@ export default {
         const uniqueCategories = [...new Set(categories)]
         return uniqueCategories.join(' > ') || undefined
       },
-      description: (doc: Document) => doc.querySelector('.product-details__content p')?.textContent?.trim().slice(0, 150),
+      description: (doc: Document) => doc.querySelector('.product-details__content p')?.textContent?.trim()?.slice(0, 300),
       sku: (doc: Document) => {
         const el = doc.querySelector('[data-current-sku]')
         return el?.getAttribute('data-current-sku') || undefined
@@ -38,7 +38,7 @@ export default {
       price: { path: 'offers[0].price' },
       image: { path: 'image[0]' },
       manufacturer: { path: 'mpn' },
-      description: { path: 'description', slice: 150 },
+      description: { path: 'description', slice: 300 },
       sku: { path: 'sku' },
       uniqueId: { path: 'sku' },
       gtin: { path: 'gtin' },

@@ -18,7 +18,7 @@ export default {
         return uniqueCategories.join(' > ') || undefined
       },
       manufacturer: (doc: Document) => doc.querySelector('[class*="productInfo"] [class*="brandName"] a')?.textContent?.trim(),
-      description: (doc: Document) => doc.querySelector('[class*="descriptionContainer"] [class*="description"]')?.textContent?.trim().slice(0, 150),
+      description: (doc: Document) => doc.querySelector('[class*="descriptionContainer"] [class*="description"]')?.textContent?.trim()?.slice(0, 300),
       sku: (doc: Document) => doc.querySelector('[class*="descriptionContainer"] [class*="body"]')?.textContent?.trim().split('#')[1]?.trim(),
       uniqueId: (doc: Document) => doc.querySelector('[class*="descriptionContainer"] [class*="body"]')?.textContent?.trim().split('#')[1]?.trim(),
       madeInCanada: (doc: Document) => {

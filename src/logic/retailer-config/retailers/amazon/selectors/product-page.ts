@@ -24,7 +24,7 @@ export default {
         const manufacturerItem = listItems.find(item => item.querySelector('.a-text-bold')?.textContent?.includes('Manufacturer'))
         return manufacturerItem?.querySelector('span:nth-of-type(2)')?.textContent?.trim() || null
       },
-      description: (doc: Document) => doc.querySelector('#productDescription')?.textContent?.trim().slice(0, 150),
+      description: (doc: Document) => doc.querySelector('#productDescription')?.textContent?.trim()?.slice(0, 300),
       asin: (doc: Document) => (doc.querySelector('input#ASIN') as HTMLInputElement)?.value,
       uniqueId: (doc: Document) => (doc.querySelector('input#ASIN') as HTMLInputElement)?.value,
       madeInCanada: (doc: Document) => {

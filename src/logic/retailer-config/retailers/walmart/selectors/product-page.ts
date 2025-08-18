@@ -29,7 +29,7 @@ export default {
         return uniqueCategories.join(' > ') || undefined
       },
       manufacturer: (doc: Document) => doc.querySelector('[data-seo-id="brand-name"]')?.textContent?.trim(),
-      description: (doc: Document) => doc.querySelector('[data-testid="product-description-content"]')?.textContent?.trim().slice(0, 150),
+      description: (doc: Document) => doc.querySelector('[data-testid="product-description-content"]')?.textContent?.trim().slice(0, 300),
       upc: (doc: Document) => {
         const match = doc.body.textContent?.match(/Universal Product Code.*?(\d{10,15})/)
         return match ? match[1] : null
@@ -58,7 +58,7 @@ export default {
       price: { path: 'offers[0].price' },
       image: { path: 'image' },
       manufacturer: { path: 'brand.name' },
-      description: { path: 'description', slice: 150 },
+      description: { path: 'description', slice: 300 },
       sku: { path: 'sku' },
       uniqueId: { path: 'sku' },
     },

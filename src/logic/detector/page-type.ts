@@ -1,4 +1,3 @@
-import { activeCustomView } from '~/logic/storage/index'
 import type { RetailerInfo } from '~/types/retailer/retailer.types'
 import type { PageType } from '~/types/view-data/page-type.types'
 
@@ -24,11 +23,6 @@ export async function detectPageType(
   isCaDomain: boolean,
   baseName: string | null,
 ): Promise<PageType> {
-  //  Prioritize active custom view (e.g., bookmarks or search results)
-  if (activeCustomView.value) {
-    return activeCustomView.value as PageType
-  }
-
   // Fetch failed for this retailer
   if (!retailerResult)
     return 'RETAILER_ERROR_PAGE'

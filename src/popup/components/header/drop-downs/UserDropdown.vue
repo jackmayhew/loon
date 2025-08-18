@@ -2,7 +2,7 @@
 import { onClickOutside } from '@vueuse/core'
 import { Bookmark, Globe, User } from 'lucide-vue-next'
 import { useI18n } from 'vue-i18n'
-import { activeCustomView, submittedSearchQuery, userLanguage } from '~/logic/storage/index'
+import { submittedSearchQuery, userLanguage } from '~/logic/storage/index'
 import { useSearchResults } from '~/composables/popup/search/use-search-results'
 import { useBookmarkProducts } from '~/composables/popup/bookmark/use-bookmarked-products'
 import { usePopoverEscape } from '~/composables/popup/events/use-popover-escape'
@@ -100,7 +100,7 @@ const isDisabled = computed(() =>
           <BaseButton
             :aria-label="$t('accessibility.viewBookmarks')"
             :class="[
-              { 'bg-neutral-100 pointer-events-none': activeCustomView === 'BOOKMARKS_PAGE' },
+              { 'bg-neutral-100 pointer-events-none': pageType === 'BOOKMARKS_PAGE' },
               { 'pointer-events-none': isDisabled },
             ]"
             :disabled="props.isViewLoading || isDisabled"

@@ -1,13 +1,14 @@
 import { clearAllCache, clearCacheForTab, handleCacheUpdates } from '~/background/handlers/cache/cache'
 import { clearActiveNavigation, navigationHandler } from '~/background/handlers/navigation/navigation'
-import { activeCustomView, allRetailerConfigs, rateLimitState } from '~/logic/storage/index'
+import { allRetailerConfigs, rateLimitState } from '~/logic/storage/index'
 import { fetchAndCacheRetailerConfigs } from '~/background/handlers/retailers/retailers-handler'
+import { CUSTOM_VIEW_TYPES_SET } from '~/constants/view-data/custom-view-types'
+
 import type { ViewData } from '~/types/view-data/view-data.types'
-import type { CustomViewType } from '~/types/view-data/custom-view.types'
 
 interface SoftRefreshData {
   tabId: number
-  storeActiveView?: CustomViewType
+  pageType?: any
 }
 
 /**
@@ -17,7 +18,7 @@ interface SoftRefreshData {
  * @param {SoftRefreshData} data - The necessary data, including the tabId to refresh.
  */
 export async function handleRefresh(data: SoftRefreshData) {
-  const { tabId, storeActiveView } = data
+  const { tabId, pageType } = data
   const MIN_REFRESH_DURATION = 1000
   const refreshStart = Date.now()
 
@@ -34,17 +35,21 @@ export async function handleRefresh(data: SoftRefreshData) {
     clearActiveNavigation(tabId)
     rateLimitState.value = { isLimited: false }
 
-    // 3. Restore a custom view (like bookmarks) if the user was on one.
-    if (storeActiveView)
-      activeCustomView.value = storeActiveView
-
+    // 3. Ensure ui feedback
     const elapsed = Date.now() - refreshStart
     const remainingDelay = Math.max(0, MIN_REFRESH_DURATION - elapsed)
     if (remainingDelay > 0) {
       await new Promise(resolve => setTimeout(resolve, remainingDelay))
     }
 
-    // 4. Re-run the analysis for the tab's current URL.
+    // 4. Restore a custom view (like bookmarks) if the user was on one
+    if (CUSTOM_VIEW_TYPES_SET.has(pageType)) {
+      const viewData = { url: tab.url, pageType, isRefreshing: false, domStatus: 'DOM_LOADED' as const }
+      handleCacheUpdates({ tabId, viewData }, 'replace')
+      return { success: true }
+    }
+
+    // 5. Re-run the analysis for the tab's current URL.
     await navigationHandler({ tabId, url: tab.url, frameId: 0 })
 
     return { success: true }

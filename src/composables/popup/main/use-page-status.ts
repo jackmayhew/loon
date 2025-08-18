@@ -14,7 +14,7 @@ import { computed, onMounted } from 'vue'
 import { watchOnce } from '@vueuse/core'
 import type { Ref } from 'vue'
 import type { Runtime } from 'webextension-polyfill'
-import { activeCustomView, rateLimitState, serviceUnavailableState, viewDataCached } from '~/logic/storage/index'
+import { rateLimitState, serviceUnavailableState, viewDataCached } from '~/logic/storage/index'
 import { CUSTOM_VIEW_TYPES_SET } from '~/constants/view-data/custom-view-types'
 import { CACHE_COMPLETE_VIEW_DATA, RESET_AND_ANALYZE_TAB, RETRY_TRIGGER_SCRAPE, TRIGGER_REFRESH } from '~/constants/system/message-types'
 import type { PageType } from '~/types/view-data/page-type.types'
@@ -32,7 +32,11 @@ export function usePageStatus(
   const activeUrl = computed(() => viewData.value?.url)
   const popupIsRefreshingFlag = ref<boolean>(false) // Local lock
   const popupIsRefreshing = computed(() => viewData.value?.isRefreshing ?? false) // True refresh status from background
-
+  const isCustomViewActive = computed(() => {
+    if (!viewData.value?.pageType)
+      return false
+    return CUSTOM_VIEW_TYPES_SET.has(viewData.value.pageType as CustomViewType)
+  })
   let port: Runtime.Port | null = null
 
   /**
@@ -90,9 +94,6 @@ export function usePageStatus(
     if (serviceUnavailableState.value.isUnavailable)
       return 'SERVICE_UNAVAILABLE_PAGE'
 
-    if (activeCustomView.value)
-      return activeCustomView.value
-
     // Ignore non-web pages (e.g., 'chrome://' or 'about:blank')
     if (!currentUrl.value?.startsWith('http'))
       return 'NON_HTTP_PAGE'
@@ -107,7 +108,7 @@ export function usePageStatus(
   })
 
   const domStatus = computed<DomStatus>(() => {
-    if (activeCustomView.value)
+    if (isCustomViewActive.value)
       return 'DOM_LOADED'
 
     // Ignore non-web pages (e.g., 'chrome://' or 'about:blank')
@@ -139,9 +140,8 @@ export function usePageStatus(
       return
     }
 
-    // Store current view to revert if message fails
-    const previousView = activeCustomView.value
-    activeCustomView.value = newPageType as CustomViewType
+    // Optomistic update. Doesn't seem to be needed
+    // viewData.value = { pageType: newPageType, domStatus: 'DOM_LOADED' }
 
     const viewDataToCache = { pageType: newPageType }
 
@@ -157,10 +157,6 @@ export function usePageStatus(
     }
     catch (error) {
       console.error('Failed to cache custom view change:', error)
-
-      // Caching failed, revert the view change to keep UI consistent
-      activeCustomView.value = previousView
-
       setErrorState('VIEW_CHANGE_FAILED')
     }
   }
@@ -172,10 +168,6 @@ export function usePageStatus(
       setErrorState('MISSING_TAB_ID')
       return
     }
-
-    // Immediately set the view back to null,
-    // the background script will provide the new correct state
-    activeCustomView.value = null
 
     try {
       await browser.runtime.sendMessage({
@@ -200,7 +192,7 @@ export function usePageStatus(
         type: TRIGGER_REFRESH,
         data: {
           tabId: tabId.value,
-          storeActiveView: activeCustomView.value,
+          pageType: viewData.value?.pageType,
         },
       })
     }

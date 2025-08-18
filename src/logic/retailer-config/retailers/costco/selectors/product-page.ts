@@ -15,7 +15,7 @@ export default {
         return uniqueCategories.join(' > ') || undefined
       },
       manufacturer: (doc: Document) => doc.querySelector('[itemprop="brand"]')?.textContent?.trim(),
-      description: (doc: Document) => doc.querySelector('#productDescriptions1')?.textContent?.trim().slice(0, 150),
+      description: (doc: Document) => doc.querySelector('#productDescriptions1')?.textContent?.trim()?.slice(0, 300),
       sku: (doc: Document) => doc.querySelector('[automation-id="itemNumberOutput"]')?.textContent?.replace(/\D/g, '')?.trim(),
       uniqueId: (doc: Document) => doc.querySelector('[automation-id="itemNumberOutput"]')?.textContent?.replace(/\D/g, '')?.trim(),
     },
