@@ -1,12 +1,11 @@
 import { sendMessage } from 'webext-bridge/background'
 import { SSE_ERROR, SSE_UPDATE } from '~/constants/system/message-types'
 import { API_BASE_URL, API_ENDPOINTS } from '~/constants/api/api'
-// import { getUniqueUserId } from '~/utils/get-unique-user-id'
 
-// Map to store active connections
+// Active connections
 const activeEventSources = new Map<string, EventSource>()
 
-// Map to store active jobs
+// Aactive jobs
 const activeTabJobs = new Map<number, string>()
 
 /* eslint-disable no-console */

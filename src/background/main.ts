@@ -15,12 +15,14 @@ import '~/background/listeners/sse/sse'
 
 // --- Initialize specific systems ---
 import { initApiClientHandler } from '~/background/handlers/api-client/api-client'
-import { initAnalyticsHandler } from '~/background/handlers/analytics/analytics'
+import { handleAmazonDomScrapeSuccess, handleAnalyticsOutboundClick } from '~/background/handlers/analytics/analytics'
 import { initNavigationListeners } from '~/background/handlers/navigation/navigation'
 import { initProductPageHandler } from '~/background/handlers/product-page/product-page-handler'
 import { initCartPageHandler } from '~/background/handlers/cart-page/cart-page-handler'
 import { fetchAndCacheRetailerConfigs } from '~/background/handlers/retailers/retailers-handler'
 import { initPortManager } from '~/background/handlers/popup/port-manager'
+
+// --- Constants ---
 import { ANALYTICS_BATCH_ALARM, DAILY_RETAILER_CONFIG_ALARM } from '~/constants/system/alarm-names'
 import { APP_LINKS } from '~/constants/links/links'
 
@@ -49,11 +51,12 @@ browser.runtime.onStartup.addListener(fetchAndCacheRetailerConfigs)
  * modularity and avoiding a single, fragile listener file
  */
 initNavigationListeners()
-initAnalyticsHandler()
+initPortManager()
 initApiClientHandler()
 initProductPageHandler()
 initCartPageHandler()
-initPortManager()
+handleAnalyticsOutboundClick()
+handleAmazonDomScrapeSuccess()
 
 // only in dev
 if (import.meta.hot) {

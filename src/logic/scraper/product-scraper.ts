@@ -89,6 +89,11 @@ export async function extractProductData(retailer: RetailerInfo, signal: AbortSi
   if (signal.aborted)
     return { status: 'ERROR', errorCode: ERROR_CODES.ABORT }
 
+  scrapeProductPageDom(config.productPage?.dom?.selectors, productData)
+
+  if (signal.aborted)
+    return { status: 'ERROR', errorCode: ERROR_CODES.ABORT }
+
   /**
    * Executes optional custom scraping logic if configured.
    *
@@ -111,15 +116,10 @@ export async function extractProductData(retailer: RetailerInfo, signal: AbortSi
   if (signal.aborted)
     return { status: 'ERROR', errorCode: ERROR_CODES.ABORT }
 
-  scrapeProductPageDom(config.productPage?.dom?.selectors, productData)
-
   // Step 6: Ensure minimum required data was scraped
-  if (!productData.data.name || !productData.data.category) {
+  if (!productData.data.name || !productData.data.description || !productData.data.image) {
     return { status: 'ERROR', errorCode: ERROR_CODES.SCRAPE }
   }
-
-  if (signal.aborted)
-    return { status: 'ERROR', errorCode: ERROR_CODES.ABORT }
 
   // Step 7. Clean scraped data
   const fieldsToClean: (keyof ScrapedProduct)[] = ['name', 'description', 'uniqueId']

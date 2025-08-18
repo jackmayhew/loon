@@ -13,6 +13,7 @@ export const API_ENDPOINTS = {
   // Analytics
   ANALYTICS_USER: '/analytics/user',
   ANALYTICS_CLICK: '/analytics/product-click',
+  ANALYTICS_AMAZON_DOM_SCRAPE: '/analytics/amazon-dom-scrape',
 
   // Bookmark
   FETCH_BOOKMARKED_PRODUCTS: '/bookmarks/fetch-bookmarked-products',

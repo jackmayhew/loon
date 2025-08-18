@@ -7,7 +7,6 @@ import { getUniqueUserId } from '~/utils/analytics/get-unique-user-id'
 import { API_BASE_URL, API_ENDPOINTS } from '~/constants/api/api'
 import type { AnalyticsEvent } from '~/types/analytics/analytics-event.types'
 
-// AbortController for any active, cancellable request
 const activeControllers = new Map<string, AbortController>()
 
 interface ApiCallMessage {

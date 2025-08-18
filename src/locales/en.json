@@ -155,7 +155,6 @@
     "STATUS_PROCESSED": "Product processed",
     "STATUS_ANALYZING_DATA": "Analyzing product data...",
     "STATUS_ANALYZED_DATA": "Analysis complete",
-    "STATUS_FETCH_READY": "Ready to find alternatives",
     "STATUS_FETCH_STARTING": "Finding Canadian alternatives...",
     "STATUS_FETCH_COMPLETE": "Alternatives found!",
     "STATUS_SUCCESSFUL": "Success!",

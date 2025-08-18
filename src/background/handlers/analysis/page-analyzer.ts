@@ -5,6 +5,7 @@ import { SUPPORTED_RETAILERS } from '~/constants/data/supported-retailers'
 import type { PageType } from '~/types/view-data/page-type.types'
 import type { RetailerInfo } from '~/types/retailer/retailer.types'
 import type { RetailerConfigFromDB } from '~/types/retailer/retailer-data.types'
+
 /**
  * Checks if a hostname is directly supported by looking up exact domain matches in retailer configs.
  */

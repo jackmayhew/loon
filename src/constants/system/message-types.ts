@@ -26,6 +26,7 @@ export const STOP_SSE_LISTENING = 'STOP_SSE_LISTENING'
 
 // --- Analytics ---
 export const TRACK_OUTBOUND_CLICK = 'TRACK_OUTBOUND_CLICK'
+export const TRACK_AMAZON_DOM_SCRAPE = 'TRACK_AMAZON_DOM_SCRAPE'
 
 // --- Popup to Backend Communication ---
 export const RETRY_TRIGGER_SCRAPE = 'RETRY_TRIGGER_SCRAPE'

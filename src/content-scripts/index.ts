@@ -46,13 +46,13 @@ import { CS_READY, GET_MY_TAB_ID, PING, PONG, TRIGGER_SCRAPE } from '~/constants
 
   // Handshake with confirmCSReady (CS is already loaded)
   // TODO: Type this properly
-  browser.runtime.onMessage.addListener((message: any, sender: any, sendResponse: any) => {
+  browser.runtime.onMessage.addListener((message: any, _sender: any) => {
     if (message.type === PING) {
-      sendResponse({ reply: PONG })
-      return true
+      return Promise.resolve({ reply: PONG })
     }
     if (message.type === TRIGGER_SCRAPE) {
       scrapeData(message.data)
+      return Promise.resolve({})
     }
   })
 

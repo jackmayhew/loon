@@ -1,5 +1,5 @@
 import { sendMessage } from 'webext-bridge/content-script'
-import { API_CALL } from '~/constants/system/message-types'
+import { API_CALL, TRACK_AMAZON_DOM_SCRAPE } from '~/constants/system/message-types'
 import { API_ENDPOINTS } from '~/constants/api/api'
 import type { ProductPageData } from '~/types/scraper/product-page-result.types'
 import type { RainforestResponse } from '~/types/api/rainforest/response.types'
@@ -19,6 +19,13 @@ export async function customScrapingLogic(
   productData: ProductPageData,
   activeDomain: ActiveDomain,
 ): Promise<boolean> {
+  // Skip api call if we have minimum required data
+  if (productData.data.name && productData.data.description && productData.data.image) {
+    // Track cost savings and scraper effectiveness
+    sendMessage(TRACK_AMAZON_DOM_SCRAPE, {}, 'background')
+    return true
+  }
+
   // 1. Get ASIN
   const asinElement = doc.querySelector<HTMLInputElement>('input#ASIN')
   const asin = asinElement?.value
@@ -47,13 +54,13 @@ export async function customScrapingLogic(
 
     const asinProduct = response.data
 
-    // Step 3. Merge data
     /**
      * Merges product data fetched from the Rainforest API into `productData.data`.
      * Assumes the API handles translation and provides data for the active locale.
      * If the language is French, the `locale_name` field from the API data
      * is excluded during the merge to preserve locale name to display in UI
      */
+    // Step 3. Merge data
     if (activeLanguage === 'french') {
       const { locale_name, ...rest } = asinProduct
       Object.assign(productData.data, rest)
