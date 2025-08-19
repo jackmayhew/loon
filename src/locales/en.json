@@ -234,5 +234,26 @@
     "Shoppers Drug Mart": "Shoppers Drug Mart",
     "Staples": "Staples",
     "Walmart": "Walmart"
+  },
+  "welcome-page": {
+    "pageTitle": "Welcome",
+    "title": "Thanks for installing Loon!",
+    "subTitle": "Read our quick set up guide below to get started.",
+    "steps": {
+      "step1": {
+        "title": "1. Launch Loon from the extensions toolbar.",
+        "description": "Look for the Loon icon in the top-right corner of your browser and click it to open the extension. Don't see it? You may need to pin it first by clicking the puzzle piece icon."
+      },
+      "step2": {
+        "title": "2. Navigate to any supported retailer and view a product.",
+        "description": "Head to a product page on retailers like Amazon, Walmart, or any of our",
+        "supportedRetailers": "supported retailers."
+      },
+      "step3": {
+        "title": "3. Open Loon to see Canadian alternatives instantly.",
+        "description": "Click the Loon icon again while viewing a product, and Canadian alternatives will appear right away."
+      },
+      "conclusion": "That's it! We hope you enjoy the extension."
+    }
   }
 }

@@ -30,9 +30,9 @@ import { APP_LINKS } from '~/constants/links/links'
  * Runs on extension install or update to perform initial setup. This includes
  * opening a welcome page, fetching configs, and setting up core alarms.
  */
-browser.runtime.onInstalled.addListener((details) => {
+browser.runtime.onInstalled.addListener(async (details) => {
   if (details.reason === 'install') {
-    browser.tabs.create({ url: APP_LINKS.WELCOME })
+    await browser.tabs.create({ url: APP_LINKS.WELCOME })
   }
   fetchAndCacheRetailerConfigs()
   browser.alarms.create(DAILY_RETAILER_CONFIG_ALARM, { periodInMinutes: 60 * 24 })

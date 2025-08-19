@@ -233,5 +233,26 @@
     "Shoppers Drug Mart": "Pharmaprix",
     "Staples": "Bureau en Gros",
     "Walmart": "Walmart"
+  },
+  "welcome-page": {
+    "pageTitle": "Bienvenue",
+    "title": "Merci d'avoir installé Loon !",
+    "subTitle": "Lisez notre guide de configuration rapide ci-dessous pour commencer.",
+    "steps": {
+      "step1": {
+        "title": "1. Lancez Loon depuis la barre d'extensions.",
+        "description": "Cherchez l'icône Loon dans le coin supérieur droit de votre navigateur et cliquez dessus pour ouvrir l'extension. Vous ne la voyez pas ? Vous devrez peut-être d'abord l'épingler en cliquant sur l'icône de puzzle."
+      },
+      "step2": {
+        "title": "2. Naviguez vers un détaillant supporté et consultez un produit.",
+        "description": "Rendez-vous sur la page d'un produit chez des détaillants comme Amazon, Walmart, ou l'un de nos",
+        "supportedRetailers": "détaillants supportés."
+      },
+      "step3": {
+        "title": "3. Ouvrez Loon pour voir les alternatives canadiennes instantanément.",
+        "description": "Cliquez à nouveau sur l'icône Loon en consultant un produit, et les alternatives canadiennes apparaîtront immédiatement."
+      },
+      "conclusion": "C'est tout ! Nous espérons que vous apprécierez l'extension."
+    }
   }
 }
