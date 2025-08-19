@@ -17,7 +17,7 @@
 
 ## 🦆 About
 
-Shop without the hassle of searching for Canadian alternatives. Instead of spending time googling "Canadian version of...", Loon does the work for you with one click.
+Shop without the hassle of manually searching for Canadian alternatives. No extra tabs. No Google marathons. Just Canadian alternatives that show up right when you need them.
 
 ## 🧰 Features
 
@@ -25,7 +25,7 @@ Shop without the hassle of searching for Canadian alternatives. Instead of spend
 - **Smart Search** - Search our carefully curated database of Canadian products
 - **Bookmark Products** - Save your favourite Canadian finds for later
 - **No Account Required** - Start shopping Canadian immediately after install
-- **Growing Database** - New products added (almost) daily. Working hard to grow retailer coverage
+- **Growing Database** - New products added regularly, and working hard to grow retailer coverage
 
 ## 🛠️ Built With
 
@@ -75,4 +75,4 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ## 🍁 Made in Canada
 
-Developed in Montréal, QC and Victoria, BC.
+Built in Montréal, QC and Victoria, BC.
