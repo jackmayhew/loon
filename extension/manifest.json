@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Loon - Shop Canadian",
-  "version": "0.1.62",
+  "version": "0.1.63",
   "description": "Find Canadian alternatives and deals as you shop online.",
   "homepage_url": "https://getloon.ca",
   "action": {

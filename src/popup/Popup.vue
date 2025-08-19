@@ -18,7 +18,7 @@ const scrollableContainerRef = ref<HTMLElement | null>(null)
 
 // --- Get Tab Info ---
 const {
-  currentUrl,
+  // currentUrl,
   currentTabId,
   currentHostname,
 } = useTabInfo()
@@ -40,7 +40,7 @@ const {
 } = usePageStatus(
   currentTabId,
   currentHostname,
-  currentUrl,
+  // currentUrl,
 )
 
 provide('changeView', changeView)

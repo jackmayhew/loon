@@ -26,7 +26,7 @@ import type { ViewData } from '~/types/view-data/view-data.types'
 export function usePageStatus(
   tabId: Ref<number | null>,
   currentHostname: Ref<string | null>,
-  currentUrl: Ref<string | null>,
+  // currentUrl: Ref<string | null>,
 ) {
   const viewData = ref<ViewData | null>(null)
   const activeUrl = computed(() => viewData.value?.url)
@@ -94,10 +94,6 @@ export function usePageStatus(
     if (serviceUnavailableState.value.isUnavailable)
       return 'SERVICE_UNAVAILABLE_PAGE'
 
-    // Ignore non-web pages (e.g., 'chrome://' or 'about:blank')
-    if (!currentUrl.value?.startsWith('http'))
-      return 'NON_HTTP_PAGE'
-
     if (viewData.value?.pageType)
       return viewData.value.pageType
 
@@ -112,9 +108,8 @@ export function usePageStatus(
       return 'DOM_LOADED'
 
     // Ignore non-web pages (e.g., 'chrome://' or 'about:blank')
-    // if (pageType.value === 'UNKNOWN_RETAILER_PAGE')
     if (pageType.value === 'NON_HTTP_PAGE')
-      return 'DOM_LOADED' // todo: new domStatus type possibly?
+      return 'DOM_LOADED' // todo: new domStatus type?
 
     return viewData.value?.domStatus || 'WAITING'
   })
