@@ -162,6 +162,7 @@
   "errorMessages": {
     "serverError": "Oups ! Quelque chose a mal tourné. Veuillez réessayer.",
     "scrapeError": "Erreur lors du chargement des données produit. Veuillez réessayer.",
+    "scrapeMissingData": "Nous n'avons pas pu trouver les détails requis sur cette page pour chercher des alternatives.",
     "scrapeErrorCard": "Détails non disponibles...",
     "missingTitle": "Titre du produit manquant...",
     "scrapeErrors": {

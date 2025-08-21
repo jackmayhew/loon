@@ -26,6 +26,8 @@ export function useProductScrape(
     const code = errorCode.value
     if (!code)
       return ''
+    if (code === 'MISSING_SCRAPE_DATA')
+      return t('errorMessages.scrapeMissingData', 'poo loading product data. Please try again.')
     return t('errorMessages.scrapeError', 'Error loading product data. Please try again.')
   })
 

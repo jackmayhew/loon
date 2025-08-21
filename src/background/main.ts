@@ -1,7 +1,7 @@
 /**
  * Loon's background script entry point.
  *
- * This file's primary responsibility is to initialize all the separate,
+ * Primary responsibility is to initialize all the separate,
  * modular parts of the extension. It imports the handlers and listeners
  * to activate them and sets up the initial event listeners for browser
  * installation and startup.

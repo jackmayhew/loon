@@ -10,7 +10,7 @@ import type { RetailerInfo } from '~/types/retailer/retailer.types'
 const ERROR_CODES = {
   CONFIG: 'CONFIG_ERROR',
   RAINFOREST: 'RAINFOREST_ERROR',
-  SCRAPE: 'SCRAPE_ERROR',
+  SCRAPE: 'MISSING_SCRAPE_DATA',
   ABORT: 'SCRAPE_ABORTED',
 } as const
 

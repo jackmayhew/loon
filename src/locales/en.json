@@ -163,6 +163,7 @@
   "errorMessages": {
     "serverError": "Oops! Something went wrong. Please try again.",
     "scrapeError": "Error loading product data. Please try again.",
+    "scrapeMissingData": "We couldn't find the required product details on this page to search for alternatives.",
     "scrapeErrorCard": "Product details unavailable...",
     "missingTitle": "Missing product title...",
     "scrapeErrors": {
