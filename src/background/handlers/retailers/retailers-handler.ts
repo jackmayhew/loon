@@ -33,13 +33,19 @@ export async function fetchAndCacheRetailerConfigs() {
       return retailersArray
     }
     else {
+      if (response.data?.message === 'Request aborted') {
+        return
+      }
       browser.alarms.clear(RETRY_CONFIG_FETCH_ALARM)
       browser.alarms.create(RETRY_CONFIG_FETCH_ALARM, { delayInMinutes: 15 })
       console.error('Failed to fetch retailer configs:', response.data?.message || response.status)
       throw new Error('retailer fetch')
     }
   }
-  catch (error) {
+  catch (error: any) {
+    if (error.name === 'AbortError') {
+      return
+    }
     console.error('Error fetching retailer configs, scheduling retry:', error)
     browser.alarms.clear(RETRY_CONFIG_FETCH_ALARM)
     browser.alarms.create(RETRY_CONFIG_FETCH_ALARM, { delayInMinutes: 15 })
