@@ -1,7 +1,6 @@
 import { useI18n } from 'vue-i18n'
 import { useDebounceFn } from '@vueuse/core'
-import { watch } from 'vue'
-import { activeSearchQuery, submittedSearchQuery, typeaheadSearchResults } from '~/logic/storage/index'
+import { activeSearchQuery, typeaheadSearchResults } from '~/logic/storage/index'
 import { useTypeaheadAPI } from '~/composables/popup/search/typeahead/use-typeahead-api'
 import { useTypeaheadState } from '~/composables/popup/search/typeahead/use-typeahead-state'
 import type { LanguageKey } from '~/types/language/language.types'
@@ -41,7 +40,7 @@ export function useTypeaheadSearch() {
    * The main debounced search function. It orchestrates UI state changes
    * around the API call.
    */
-  const debouncedFetch = useDebounceFn(async (query: string) => {
+  const debouncedFetchSuggestions = useDebounceFn(async (query: string) => {
     const trimmedQuery = query.trim()
 
     // Don't continue if the query that triggered this is no longer the active one.
@@ -107,7 +106,7 @@ export function useTypeaheadSearch() {
       closeResults()
       return
     }
-    debouncedFetch(query)
+    debouncedFetchSuggestions(query)
   }
 
   /**
@@ -115,8 +114,11 @@ export function useTypeaheadSearch() {
    */
   function restoreResults() {
     const currentQuery = activeSearchQuery.value.query
-    if (!currentQuery || currentQuery.length < MIN_SEARCH_QUERY_LENGTH)
+
+    if (!currentQuery || currentQuery.length < MIN_SEARCH_QUERY_LENGTH || isResultsLoading.value)
       return
+
+    canShowTypeahead.value = true
 
     // If cache is valid for the current query and language, use it.
     if (
@@ -133,28 +135,18 @@ export function useTypeaheadSearch() {
     }
   }
 
-  /**
-   * Watch for when a typeahead suggestion is chosen (indicated by a change
-   * in `submittedSearchQuery.productId`) to trigger a new search.
-   */
-  watch(() => submittedSearchQuery.value.productId, (newVal, oldVal) => {
-    if (newVal !== oldVal && submittedSearchQuery.value.query) {
-      closeResults()
-      debouncedFetch(submittedSearchQuery.value.query)
-    }
-  })
-
-  // --- Expose the public API ---
   return {
     // State
     suggestions,
     isResultsOpen,
     isResultsLoading,
     hasError,
+    canShowTypeahead,
     // Actions
     handleSearch,
     restoreResults,
     closeResults,
     killTypeaheadDisplay,
+    debouncedFetchSuggestions,
   }
 }

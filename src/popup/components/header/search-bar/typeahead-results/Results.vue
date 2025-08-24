@@ -11,15 +11,16 @@ defineProps<{
   isResultsLoading: boolean
   searchAttemptErrors: boolean
   isViewLoading: boolean
+  canShowTypeahead: boolean
 }>()
 
-const emit = defineEmits(['select-result'])
+const emit = defineEmits(['selectResult'])
 </script>
 
 <template>
   <Transition name="scale-fade">
     <ul
-      v-if="isResultsOpen && enableTypeahead"
+      v-if="isResultsOpen && enableTypeahead && canShowTypeahead"
       class="w-full absolute top-17 left-0 right-0 z-10 bg-white rounded-md shadow-lg border"
     >
       <!-- Loading State -->
@@ -41,7 +42,7 @@ const emit = defineEmits(['select-result'])
           v-for="result in results"
           :key="result.product_id"
           :result="result"
-          @select-result="product => emit('select-result', product)"
+          @select-result="product => emit('selectResult', product)"
         />
       </template>
 

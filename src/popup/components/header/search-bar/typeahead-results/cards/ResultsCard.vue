@@ -14,7 +14,7 @@ defineProps<{
   result: TypeaheadProduct
 }>()
 
-const emit = defineEmits(['select-result'])
+const emit = defineEmits(['selectResult'])
 
 const activeTabId = inject('activeTabId') as Ref<number>
 const { locale } = useI18n()
@@ -36,7 +36,7 @@ function handleClick(item: TypeaheadProduct) {
 <template>
   <li
     class="p-2 cursor-pointer border-b last:border-none hover:bg-gray-100 transition-colors duration-150"
-    @click="emit('select-result', result)"
+    @click="emit('selectResult', result)"
   >
     <div class="flex gap-2 relative">
       <div class="w-12 h-12 flex-shrink-0 rounded overflow-hidden aspect-ratio-1/1">

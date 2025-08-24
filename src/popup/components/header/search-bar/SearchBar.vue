@@ -21,11 +21,13 @@ const {
   isResultsOpen,
   isResultsLoading,
   hasError,
+  canShowTypeahead,
   // Actions
   handleSearch,
   restoreResults,
   closeResults,
   killTypeaheadDisplay,
+  debouncedFetchSuggestions,
 } = useTypeaheadSearch()
 
 // --- Injectables and Refs ---
@@ -64,9 +66,14 @@ function handleResultSelection(result: TypeaheadProduct) {
     changeView('SEARCH_RESULTS_PAGE')
 
   // 4. Close the typeahead dropdown completely
-  closeResults()
   killTypeaheadDisplay()
+  closeResults()
+
+  // 5. Silently fetch and cache the typeahead results for the selected query
+  debouncedFetchSuggestions(result.product_name)
 }
+
+// fix(typeahead): fix typeahead results - fix loading state and remove redundant product id watcher causing ui flicker
 
 // --- UI Logic ---
 onClickOutside(
@@ -94,6 +101,7 @@ onClickOutside(
       :is-results-loading="isResultsLoading"
       :search-attempt-errors="hasError"
       :is-view-loading="props.isViewLoading"
+      :can-show-typeahead="canShowTypeahead"
       @select-result="handleResultSelection"
     />
   </div>
