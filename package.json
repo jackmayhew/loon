@@ -33,7 +33,7 @@
     "version": "node -e \"const fs = require('fs'); const manifest = require('./extension/manifest.json'); const pkg = require('./package.json'); manifest.version = pkg.version; fs.writeFileSync('./extension/manifest.json', JSON.stringify(manifest, null, 2));\""
   },
   "dependencies": {
-    "axios": "^1.11.0",
+    "axios": "^1.12.0",
     "country-flag-emoji": "^1.0.3",
     "lucide-vue-next": "^0.510.0",
     "tldts": "^7.0.11",
