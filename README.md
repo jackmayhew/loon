@@ -10,8 +10,6 @@
 
 *Find Canadian alternatives while you shop online.*
 
-<br>
-
 **⚠️ LOON HAS BEEN ARCHIVED ⚠️**
 
 [🌐 Website](https://getloon.ca) | [💬 Support](https://github.com/jackmayhew/loon/issues)
