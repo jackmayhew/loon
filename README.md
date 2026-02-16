@@ -19,6 +19,8 @@
 
 ## 🦆 About
 
+**⚠️ LOON IS ARCHIVED** - Adding product data, marketing, and development became too time-consuming for a side project.
+
 Shop without the hassle of manually searching for Canadian alternatives. No extra tabs. No Google marathons. Just Canadian alternatives that show up right when you need them.
 
 ## 🧰 Features
