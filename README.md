@@ -9,11 +9,10 @@
  [![GitHub stars](https://img.shields.io/github/stars/jackmayhew/loon)](https://github.com/jackmayhew/loon)
 
 *Find Canadian alternatives while you shop online.*
-<br>
-
-**⚠️ LOON HAS BEEN ARCHIVED**
 
 <br>
+
+**⚠️ LOON HAS BEEN ARCHIVED ⚠️**
 
 [🌐 Website](https://getloon.ca) | [💬 Support](https://github.com/jackmayhew/loon/issues)
 
